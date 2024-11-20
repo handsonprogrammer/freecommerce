@@ -2,21 +2,23 @@ package org.freecommerce.catalogservice.dto;
 
 public class ProductDto {
 
-    Long productId;
+    String productId;
     String name;
     String description;
 
-    public ProductDto(Long productId, String name, String description) {
+    Price price;
+
+    public ProductDto(String productId, String name, String description) {
         this.productId = productId;
         this.name = name;
         this.description = description;
     }
 
-    public Long getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 
@@ -36,4 +38,12 @@ public class ProductDto {
         this.description = description;
     }
 
+    public Price getPrice() {
+        return price;
+    }
+
+    public void setPrice(Price price) {
+        this.price = price;
+    }
 }
+

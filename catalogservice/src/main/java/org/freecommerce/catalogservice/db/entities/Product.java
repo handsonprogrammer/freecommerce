@@ -1,26 +1,30 @@
 package org.freecommerce.catalogservice.db.entities;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document
 public class Product {
 
     @Id
-    Long productId;
+    String productID;
     String name;
     String description;
 
-    public Product(Long productId, String name, String description) {
-        this.productId = productId;
+    Price price;
+
+    public Product(String productID, String name, String description) {
+        this.productID = productID;
         this.name = name;
         this.description = description;
     }
 
-    public Long getProductId() {
-        return productId;
+    public String getProductID() {
+        return productID;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setProductID(String productID) {
+        this.productID = productID;
     }
 
     public String getName() {
@@ -38,4 +42,13 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Price getPrice() {
+        return price;
+    }
+
+    public void setPrice(Price price) {
+        this.price = price;
+    }
 }
+
