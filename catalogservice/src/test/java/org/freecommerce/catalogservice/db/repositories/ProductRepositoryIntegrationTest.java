@@ -1,12 +1,12 @@
 package org.freecommerce.catalogservice.db.repositories;
 
 import org.freecommerce.catalogservice.db.entities.Product;
-import org.junit.Before;
 import org.junit.jupiter.api.*;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.MongoDBContainer;
@@ -15,13 +15,13 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.when;
 
 @SpringBootTest(webEnvironment =
         SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
+@ActiveProfiles({"integration"})
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class ProductRepositoryTest {
+public class ProductRepositoryIntegrationTest {
     @Autowired
     ProductRepository productRepository;
 
