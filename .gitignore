@@ -26,3 +26,4 @@ replay_pid*
 
 #IDE meta folders
 .vscode
+.idea
