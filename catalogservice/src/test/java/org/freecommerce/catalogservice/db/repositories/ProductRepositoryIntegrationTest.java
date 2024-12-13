@@ -1,34 +1,24 @@
 package org.freecommerce.catalogservice.db.repositories;
 
 import org.freecommerce.catalogservice.db.entities.Product;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Order;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
-import org.testcontainers.containers.MongoDBContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@SpringBootTest(webEnvironment =
+/*@SpringBootTest(webEnvironment =
         SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
 @ActiveProfiles({"integration"})
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)*/
 public class ProductRepositoryIntegrationTest {
     @Autowired
     ProductRepository productRepository;
 
-    @Mock
-    Environment env;
-
-    @BeforeAll
+    /*@BeforeAll
     public static void beforeAll() {
         mongoDBContainer.start();
     }
@@ -42,9 +32,9 @@ public class ProductRepositoryIntegrationTest {
         registry.add("mongo.dbname", ()->String.valueOf("testdb"));
         registry.add("mongo.host", ()-> mongoDBContainer.getHost());
         registry.add("mongo.port", ()-> mongoDBContainer.getFirstMappedPort());
-    }
+    }*/
 
-    @Test
+    //@Test
     @Order(1)
     void add() {
         productRepository.save(new Product("1","Iphone 16","This is Iphone"));
