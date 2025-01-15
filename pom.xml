@@ -22,6 +22,7 @@
 
     <modules>
         <module>catalogservice</module>
+        <module>orderservice</module>
     </modules>
 
     <build>
